@@ -1,8 +1,8 @@
 <?php
 	$host="localhost"; //replace with database hostname 
 	$username="root"; //replace with database username 
-	$password=""; //replace with database password 
-	$db_name="sung"; //replace with database name
+	$password="mysql"; //replace with database password 
+	$db_name="gjm"; //replace with database name
 
 	$con=mysqli_connect($host,$username,$password,$db_name);
 	// Check connection
@@ -11,7 +11,7 @@
 		//echo "Failed to connect to MySQL: " . mysqli_connect_error();
 	}
 
-	$sql="SELECT * FROM mahasiswa";
+	$sql="SELECT * FROM barang";
 
 	if ($result=mysqli_query($con,$sql))
 	{
