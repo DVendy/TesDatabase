@@ -21,6 +21,9 @@
 
 		while($row = $result->fetch_assoc()){
 			//echo $row['nama'] . " " . $row['nim'] . '<br>';
+			foreach ($row as $key => $value) {
+				$row[$key] = utf8_encode($value);
+			}
 			$json[$db_name][]=$row;
 		}
 
