@@ -10,8 +10,8 @@
 	{
 		//echo "Failed to connect to MySQL: " . mysqli_connect_error();
 	}
-
-	$sql="SELECT * FROM barang";
+//$_POST["version"] = "2015-01-01 00:00:00";
+	$sql="SELECT * FROM barang WHERE lastupdate > '".$_POST["version"]."'";
 
 	if ($result=mysqli_query($con,$sql))
 	{
@@ -32,5 +32,6 @@
 	}
 
 	mysqli_close($con);
+	//echo $_POST["version"];
 	echo json_encode($json); 
 ?> 
