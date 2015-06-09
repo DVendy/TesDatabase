@@ -7,8 +7,8 @@ include 'var.php';
 	{
 		//echo "Failed to connect to MySQL: " . mysqli_connect_error();
 	}
-
-	$sql="SELECT * FROM users";
+//$_POST["version"] = "2015-06-08 15:20:21";
+	$sql="SELECT COUNT(*) FROM barang WHERE lastupdate > '".$_POST["version"]."'";
 
 	if ($result=mysqli_query($con,$sql))
 	{
@@ -29,5 +29,6 @@ include 'var.php';
 	}
 
 	mysqli_close($con);
+	//echo $_POST["version"];
 	echo json_encode($json); 
-?>
+?> 

@@ -7,8 +7,10 @@ include 'var.php';
 	{
 		//echo "Failed to connect to MySQL: " . mysqli_connect_error();
 	}
-
-	$sql="SELECT * FROM users";
+	// $_POST["version"] = "2015-01-01 00:00:00";
+	// $_POST["limit"] = 12;
+	// $_POST["offset"] = 23;
+	$sql="SELECT * FROM barang WHERE lastupdate > '".$_POST["version"]."' LIMIT ".$_POST["limit"]." OFFSET ".$_POST["offset"]."";
 
 	if ($result=mysqli_query($con,$sql))
 	{
@@ -29,5 +31,6 @@ include 'var.php';
 	}
 
 	mysqli_close($con);
+	//echo $_POST["limit"];
 	echo json_encode($json); 
-?>
+?> 
