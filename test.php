@@ -1,9 +1,17 @@
 <?php
-	$kumpulan = array('a', 'b', 'c');
-	$a = "a1b2c";
+	$a = [];
+	$a[] = [
+		'itemcode' => "1",
+		'itemname' => "a",
+		];
+	$a[] = [
+		'itemcode' => "2",
+		'itemname' => "b",
+		];
+	$a[] = [
+		'itemcode' => "3",
+		'itemname' => "c",
+		];
 
-	if(strpos($a, $kumpulan) !== false)
-		echo "ada";
-	else
-		echo "ga";
+		var_dump(array_column($a, 'itemcode'));
 ?> 
