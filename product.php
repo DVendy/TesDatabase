@@ -10,7 +10,7 @@ include 'var.php';
 	  $_POST["version"] = "2015-01-01 00:00:00";
 	 // $_POST["limit"] = 0;
 	 // $_POST["offset"] = 5;
-	$sql="SELECT * FROM barang WHERE lastupdate > '".$_POST["version"]."' OR status = 1";
+	$sql="SELECT * FROM barang WHERE lastupdate > '".$_POST["version"]."' OR status = 1 OR status = 10";
 
 	if ($result=mysqli_query($con,$sql))
 	{
